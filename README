@@ -14,7 +14,7 @@ Frotate is a file rotation utility, similar to rotatelogs and cronolog.
 It takes data on it standard input and writes it to rotation files.
 
 I wrote it because rotatelogs and cronolog were not able to limit the size
-of the data written to disk, whereas embeded systems need to strictly
+of the data written to disk, whereas embedded systems need to strictly
 control disk usage.
 
 Example:
