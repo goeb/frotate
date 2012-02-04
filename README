@@ -1,0 +1,51 @@
+
+// Frotate - File rotation utility for embedded systems
+// Copyright (C) 2012 Frederic Hoerni - fhoerni@free.fr
+// Licensed under the GNU GENERAL PUBLIC LICENSE Version 3.
+// This program comes with ABSOLUTELY NO WARRANTY.
+// This is free software, and you are welcome to redistribute it
+// under certain conditions.
+
+
+Introduction
+------------
+
+Frotate is a file rotation utility, similar to rotatelogs and cronolog.
+It takes data on it standard input and writes it to rotation files.
+
+I wrote it because rotatelogs and cronolog were not able to limit the size
+of the data written to disk, whereas embeded systems need to strictly
+control disk usage.
+
+Example:
+cat /dev/zero | frotate --prefix frotate.log --size 524288 -n 3
+
+This writes to the files:
+frotate.log
+frotate.log.1
+frotate.log.2
+
+The size of each of these files is limited by the --size argument (in bytes) (+ the granularity - see below).
+The number of these files is limited by the -n argument.
+
+
+Installation
+------------
+
+Set CC to your favorite C compiler and enter 'make'.
+
+Example:
+shell> CC=gcc make
+
+Launch the test (optional):
+shell> make -C test
+
+And copy the executable 'frotate' to where you need it.
+
+
+Going Further
+-------------
+Currently the granularity of the file size is 4096 bytes.
+
+
+
