@@ -32,7 +32,7 @@ void usage()
 
 int openFile(const char *prefix)
 {
-    int fd = open(prefix, O_CREAT|O_WRONLY|O_TRUNC, S_IRUSR|S_IWUSR);
+    int fd = open(prefix, O_CREAT|O_WRONLY|O_APPEND, S_IRUSR|S_IWUSR);
     if (fd < 0) {
         fprintf(stderr, "Cannot open %s: %s\n", prefix, strerror(errno));
         exit(1);

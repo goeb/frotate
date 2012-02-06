@@ -38,7 +38,7 @@ Example:
 shell> CC=gcc make
 
 Launch the test (optional):
-shell> make -C test
+shell> make test
 
 And copy the executable 'frotate' to where you need it.
 
